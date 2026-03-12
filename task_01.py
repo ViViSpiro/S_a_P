@@ -14,4 +14,5 @@ def is_palindrome(string):
     # Проверка на палиндром
     return cleaned == cleaned[::-1]
 
+# Получаем строку от пользователя, вычисляем и выводим результат
 print(is_palindrome(input()))
