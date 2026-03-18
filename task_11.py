@@ -57,12 +57,12 @@ if __name__ == "__main__":
     print("=" * 60)
     
     # Ввод названия
-    name = input("Введите название десерта (или нажмите Enter): ").strip()
+    name = input("Введите название десерта (и/или нажмите Enter): ").strip()
     if name == "":
         name = None
     
     # Ввод калорий
-    calories_input = input("Введите калорийность (или нажмите Enter): ").strip()
+    calories_input = input("Введите калорийность (и/или нажмите Enter): ").strip()
     if calories_input == "":
         calories = None
     else:
