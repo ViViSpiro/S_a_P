@@ -91,12 +91,14 @@ if __name__ == "__main__":
     print("\n" + "=" * 60)
     print("ИЗМЕНЕНИЕ ДЕСЕРТА")
     print("=" * 60)
+    print("(оставьте поле пустым, если не хотите менять)")
+
     
-    new_name = input("Новое название (или Enter для пропуска): ").strip()
+    new_name = input("Новое название: ").strip()
     if new_name:
         dessert.name = new_name
     
-    new_calories = input("Новые калории (или Enter для пропуска): ").strip()
+    new_calories = input("Новые калории: ").strip()
     if new_calories:
         try:
             dessert.calories = float(new_calories)
