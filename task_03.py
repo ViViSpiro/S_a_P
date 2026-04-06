@@ -1,5 +1,5 @@
 # Функция для определения максимального нечетного элемента
-def max_odd(array):
+def max_odd(array=None):
     # Проверка на пустой массив или None
     if array is None:
         return None
