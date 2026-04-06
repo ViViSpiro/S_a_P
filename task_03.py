@@ -31,12 +31,3 @@ def max_odd(array):
     
     # Возвращаем максимальное нечетное число
     return max(odd_numbers)
-
-
-# Получаем входные данные, вычисляем и выводим результат
-input_str = input()
-try:
-    array = eval(input_str)
-    print(max_odd(array))
-except:
-    print(None)
