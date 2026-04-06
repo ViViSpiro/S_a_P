@@ -28,12 +28,3 @@ def sort_list(lst):
     result.append(min_val)
     
     return result
-
-
-# Получаем входные данные
-input_str = input()
-try:
-    lst = eval(input_str)
-    print(sort_list(lst))
-except:
-    print([])
