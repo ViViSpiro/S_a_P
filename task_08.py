@@ -21,18 +21,3 @@ def multiply_numbers(inputs=None):
         result *= digit
     
     return result
-
-# Получаем входные данные
-input_str = input().strip()
-
-try:
-    if input_str == "":
-        print(multiply_numbers())
-    else:
-        try:
-            inputs = eval(input_str)
-            print(multiply_numbers(inputs))
-        except:
-            print(multiply_numbers(input_str))
-except:
-    print(None)
