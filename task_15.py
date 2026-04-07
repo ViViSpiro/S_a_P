@@ -133,22 +133,14 @@ class BlockTranspositionCipher:
         """
         current_size = len(block)
         order = self._full_order
+        result = [''] * current_size
         
-        # Если блок короче полного размера, используем только
-        # те позиции, которые есть в блоке
-        if current_size < self._block_size:
-            # Создаем урезанный порядок, сохраняя только существующие индексы
-            filtered_order = [pos for pos in order if pos < current_size]
-            result = [''] * current_size
-            for new_pos, old_pos in enumerate(filtered_order):
-                result[new_pos] = block[old_pos]
-            return ''.join(result)
-        else:
-            # Для полного блока используем полный порядок
-            result = [''] * self._block_size
-            for new_pos, old_pos in enumerate(order):
-                result[new_pos] = block[old_pos]
-            return ''.join(result)
+        # Применяем перестановку: символ с позиции i идет на позицию order[i]
+        for i in range(current_size):
+            if i < len(order) and order[i] < current_size:
+                result[order[i]] = block[i]
+        
+        return ''.join(result)
     
     def __iter__(self):
         """
@@ -279,13 +271,13 @@ def interactive_mode():
 
 # ========== ЗАПУСК ==========
 if __name__ == "__main__":
-    print("ВЫБОР РЕЖИМА РАБОТЫ")    
+    print("ВЫБОР РЕЖИМА РАБОТЫ")
     print("1 - Демонстрация работы")
     print("2 - Интерактивный режим")
     
     choice = input("\nВаш выбор (1/2): ").strip()
     
-    if choice == "1":        
+    if choice == "1":
         demo()
     elif choice == "2":
         interactive_mode()
